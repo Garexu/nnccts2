@@ -1,0 +1,10 @@
+game:GetService("Players").DescendantAdded:Connect(function(chld)
+if chld.ClassName == "Actor" then
+  chld.GameClient.Enabled = false
+  local fold = Instance.new("Folder",chld.Parent)
+  chld.GameClient.Parent = fold
+  chld:Remove()
+  fold.GameClient.Enabled = true
+  setfpscap(999)
+end
+end)
